@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1 class="form-title">Create Account</h1>
+        <h1>How are you Kangaroos?</h1>
+        <form class="registration-form" id="registrationForm">
+            <!-- Name Fields -->
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="firstName" class="required">First Name</label>
+                    <input type="text" id="firstName" name="firstName" required 
+                        aria-required="true" aria-describedby="firstNameError">
+                    <span class="error-message" id="firstNameError">Please enter your first name</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName" class="required">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" required
+                        aria-required="true" aria-describedby="lastNameError">
+                    <span class="error-message" id="lastNameError">Please enter your last name</span>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email" class="required">Email</label>
+                <input type="email" id="email" name="email" required
+                    aria-required="true" aria-describedby="emailError">
+                <span class="error-message" id="emailError">Please enter a valid email address</span>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password" class="required">Password</label>
+                <input type="password" id="password" name="password" required
+                    minlength="8" pattern="^(?=.*[A-Za-z])(?=.*\d).{8,}$"
+                    aria-required="true" aria-describedby="passwordError">
+                <div class="password-strength">
+                    <div class="strength-bar"></div>
+                    <span class="strength-text"></span>
+                </div>
+                <span class="error-message" id="passwordError">Must contain at least 8 characters with letters and numbers</span>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group">
+                <label for="dob" class="required">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required
+                    aria-required="true" aria-describedby="dobError">
+                <span class="error-message" id="dobError">Please select your date of birth</span>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label for="gender" class="required">Gender</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="gender" value="male" required>
+                        <span class="custom-radio"></span>
+                        Male
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="gender" value="female">
+                        <span class="custom-radio"></span>
+                        Female
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="gender" value="other">
+                        <span class="custom-radio"></span>
+                        Other
+                    </label>
+                </div>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="form-group checkbox-group">
+                <label class="checkbox-option">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <span class="custom-checkbox"></span>
+                    Subscribe to our newsletter
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn">Create Account</button>
+        </form>
+
+        <!-- Age Verification Modal -->
+        <div class="modal-overlay" id="ageModal">
+            <div class="modal-content">
+                <h2>Age Verification Required</h2>
+                <p>You must be at least 13 years old to register.</p>
+                <button class="modal-close">Close</button>
+            </div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="success-message">
+            <div class="success-content">
+                <span class="checkmark">✓</span>
+                <h2>Registration Successful!</h2>
+                <p>Please check your email for verification</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
